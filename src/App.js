@@ -1,6 +1,12 @@
 import './App.scss';  
 import NavBar from './Components/NavBar';
 import HomePage from './Pages/HomePage';
+import AboutPage from './Pages/AboutPage';
+import PortfoliosPage from './Pages/PortfoliosPage';
+import SpotifyPage from './Pages/SpotifyPage';
+import ContactPage from './Pages/ContactPage';
+import { Switch, Route } from 'react-router-dom';
+
 function App() {
   return (
     <div className="App">
@@ -9,7 +15,23 @@ function App() {
       </div>
       <div className="main-content">
         <div className="content">
-          <HomePage/>
+          <Switch>
+            <Route path="/" exact>
+              <HomePage/>
+            </Route>
+            <Route path="/about" exact>
+              <AboutPage/>
+            </Route>
+            <Route path="/portfolios" exact>
+              <PortfoliosPage/>
+            </Route>
+            <Route path="/spotify" exact>
+              <SpotifyPage/>
+            </Route>
+            <Route path="/contact" exact>
+              <ContactPage/>
+            </Route>
+          </Switch>
         </div>
       </div>
     </div>
